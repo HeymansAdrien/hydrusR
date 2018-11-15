@@ -54,7 +54,7 @@ write.atmosph.in<- function(project.path, maxAL, deltaT,
         # tAtm = seq(deltaT, tMax, by = deltaT)
 
         bc_data_vars = c("tAtm", "Prec", "rSoil", "rRoot", "hCritA", "rB",
-                         "hB", "ht")
+                         "hB", "ht", "RootDepth")
 
         bc_data_new = atm.bc.data[1:maxAL, bc_data_vars]
         # bc_data_new = data.frame(tAtm = seq(deltaT, tMax, deltaT), bc_data_new, row.names = NULL)
