@@ -11,8 +11,7 @@
 #'
 #' @examples
 write.atmosph.in<- function(project.path, maxAL, deltaT,
-                            atm.bc.data, hCritS = 0, input.pet = T,
-                            LAI = 0.39, ...){
+                            atm.bc.data, hCritS = 0, ...){
 
         out.file = "ATMOSPH.IN"
         # default.filename = "ATMOSPH.IN"
@@ -24,16 +23,6 @@ write.atmosph.in<- function(project.path, maxAL, deltaT,
         }
         extinction_ind = grep("Extinction", atm_data)
 
-        # atm_data_bak = atm_data
-
-        if(input.pet == TRUE){
-                atm_data = atm_data
-                atm_data[(extinction_ind + 1)] = sprintf("%8s", LAI)
-
-        } else {
-                atm_data = atm_data[-c(extinction_ind, extinction_ind + 1)]
-
-        }
 
         # write(atm_data, file = "ATMOSPH_IN.BAK", append = F)
 
